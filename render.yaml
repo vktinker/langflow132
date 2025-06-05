@@ -11,9 +11,7 @@ services:
     autoDeploy: false
     envVars:
       - key: LANGFLOW_DATABASE_URL
-        fromDatabase:
-          name: langflow-db
-          property: connectionString
+        value: postgresql://langflowprod132_user:rRki7Eaz6grsxeLnmhHKU7QDTP17Lutx@dpg-d10mdta4d50c73auvh0g-a/langflowprod132
       - key: LANGFLOW_HOST
         value: 0.0.0.0
       - key: LANGFLOW_PORT
@@ -21,9 +19,3 @@ services:
         value: 10000
       - key: LANGFLOW_LOG_LEVEL
         value: INFO
-
-databases:
-  - name: langflow-db
-    databaseName: langflow
-    user: langflow
-    plan: standard
