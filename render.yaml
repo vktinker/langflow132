@@ -11,7 +11,9 @@ services:
     autoDeploy: false
     envVars:
       - key: LANGFLOW_DATABASE_URL
-        value: sqlite:////app/data/.cache/langflow/langflow.db
+        fromDatabase:
+          name: langflow-db
+          property: connectionString
       - key: LANGFLOW_HOST
         value: 0.0.0.0
       - key: LANGFLOW_PORT
@@ -19,6 +21,9 @@ services:
         value: 10000
       - key: LANGFLOW_LOG_LEVEL
         value: INFO
-    disk:
-      name: langflow-data
-      mountPath: /app/data
+
+databases:
+  - name: langflow-db
+    databaseName: langflow
+    user: langflow
+    plan: standard
