@@ -20,6 +20,6 @@ services:
       - key: LANGFLOW_LOG_LEVEL
         value: INFO
       - key: LANGFLOW_SUPERUSER
-	value: render_admin
+	    value: render_admin
       - key: LANGFLOW_SUPERUSER_PASSWORD
-	value: nc%2jd$3r4jesgygm
+	    value: nc%2jd$3r4jesgygm
